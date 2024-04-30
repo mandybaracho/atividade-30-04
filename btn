@@ -1,3 +1,4 @@
+
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
@@ -19,10 +20,14 @@ class MinhaApp(App):
         def acao_botao(instance):
             instance.text = 'Botão Pressionado 1'
         btn4 = Button(text='Botão 4')
+        btn4.bind(on_press=acao_botao)
+        layout.add_widget(btn4)
+
         layout.add_widget(info_label)
 
 
         info_label = Label(text='Pressione os botões para ver diferentres propriedades em ação')
+        layout.add_widget(info_label)
 
         return layout
 
